@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import { AppBar, Typography, Box } from '@mui/material';
+import Sidebar from './components/sidebar/Sidebar';
+import { useState } from 'react';
+
+const drawerWidth = 140;
 
 function App() {
+  const [currentPage, setCurrentPage] = useState('Home Page');
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Box>
+      <Sidebar drawerWidth={drawerWidth} setCurrentPage={setCurrentPage} />
+      <AppBar
+        color="primary"
+        sx={{
+          width: `calc(100% - ${drawerWidth}px)`,
+          ml: `${drawerWidth}px`,
+          p: 1,
+        }}
+      >
+        <Typography variant="h5">{currentPage}</Typography>
+      </AppBar>
+      <h2>test</h2>
+    </Box>
   );
 }
 
