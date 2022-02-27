@@ -13,7 +13,6 @@ export default function Sidebar({ drawerWidth, setCurrentPage }) {
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
-
       <Drawer
         sx={{
           width: drawerWidth,
@@ -44,12 +43,6 @@ export default function Sidebar({ drawerWidth, setCurrentPage }) {
           ))}
         </List>
       </Drawer>
-      <Box
-        component="main"
-        sx={{ flexGrow: 1, bgcolor: 'background.default', p: 3 }}
-      >
-        <Toolbar />
-      </Box>
     </Box>
   );
 }

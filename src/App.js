@@ -16,11 +16,14 @@ function App() {
           width: `calc(100% - ${drawerWidth}px)`,
           ml: `${drawerWidth}px`,
           p: 1,
+          pl: 2,
         }}
       >
         <Typography variant="h5">{currentPage}</Typography>
       </AppBar>
-      <h2>test</h2>
+      <Box sx={{ m: 6, ml: `${drawerWidth}px`, p: 2 }} component="h1">
+        TESTING
+      </Box>
     </Box>
   );
 }
